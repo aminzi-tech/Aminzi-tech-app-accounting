@@ -1,0 +1,63 @@
+{
+  "$comment": "THE BUSINESS-TYPE REGISTRY. Add a type = add an object to 'types'. 'id' is permanent once users exist (it is stored on their account). 'source' says where the instance is copied from: kind 'local' = a folder under templates/, kind 'git' = an https repo on an allowed host (GIT_ALLOWED_HOSTS) pinned to a tag or a 40-char commit SHA. Set 'enabled': false to hide a type from sign up without breaking existing users. The server re-reads this file automatically when it changes. See docs/INSTANCES.md.",
+  "version": 1,
+  "types": [
+    { "id": "cafe",              "label": "Café & coffee shop",            "group": "Food & hospitality",     "source": { "kind": "local", "path": "templates/food" } },
+    { "id": "restaurant",        "label": "Restaurant",                    "group": "Food & hospitality",     "source": { "kind": "local", "path": "templates/food" } },
+    { "id": "bakery",            "label": "Bakery & sweets",               "group": "Food & hospitality",     "source": { "kind": "local", "path": "templates/food" } },
+    { "id": "catering",          "label": "Catering",                      "group": "Food & hospitality",     "source": { "kind": "local", "path": "templates/food" } },
+    { "id": "hotel",             "label": "Hotel & guesthouse",            "group": "Food & hospitality",     "source": { "kind": "local", "path": "templates/food" } },
+
+    { "id": "clinic",            "label": "Clinic",                        "group": "Health",                 "source": { "kind": "local", "path": "templates/health" } },
+    { "id": "dental",            "label": "Dental clinic",                 "group": "Health",                 "source": { "kind": "local", "path": "templates/health" } },
+    { "id": "pharmacy",          "label": "Pharmacy",                      "group": "Health",                 "source": { "kind": "local", "path": "templates/health" } },
+    { "id": "medical-lab",       "label": "Medical laboratory",            "group": "Health",                 "source": { "kind": "local", "path": "templates/health" } },
+    { "id": "optician",          "label": "Optician",                      "group": "Health",                 "source": { "kind": "local", "path": "templates/health" } },
+
+    { "id": "grocery",           "label": "Grocery & supermarket",         "group": "Shops & trade",          "source": { "kind": "local", "path": "templates/retail" } },
+    { "id": "dry-food-wholesale","label": "Dry food wholesale",            "group": "Shops & trade",          "source": { "kind": "local", "path": "templates/retail" } },
+    { "id": "clothing-textile",  "label": "Clothing & textile",            "group": "Shops & trade",          "source": { "kind": "local", "path": "templates/retail" } },
+    { "id": "tailor",            "label": "Tailor",                        "group": "Shops & trade",          "source": { "kind": "local", "path": "templates/retail" } },
+    { "id": "mobile-repair",     "label": "Mobile & electronics repair",   "group": "Shops & trade",          "source": { "kind": "local", "path": "templates/retail" } },
+    { "id": "computer-it-shop",  "label": "Computer & IT shop",            "group": "Shops & trade",          "source": { "kind": "local", "path": "templates/retail" } },
+    { "id": "hardware",          "label": "Hardware & building supplies",  "group": "Shops & trade",          "source": { "kind": "local", "path": "templates/retail" } },
+    { "id": "bookshop",          "label": "Bookshop & stationery",         "group": "Shops & trade",          "source": { "kind": "local", "path": "templates/retail" } },
+    { "id": "cosmetics",         "label": "Cosmetics & perfume",           "group": "Shops & trade",          "source": { "kind": "local", "path": "templates/retail" } },
+    { "id": "furniture",         "label": "Furniture",                     "group": "Shops & trade",          "source": { "kind": "local", "path": "templates/retail" } },
+
+    { "id": "construction",      "label": "Construction company",          "group": "Building & property",    "source": { "kind": "local", "path": "templates/services" } },
+    { "id": "pvc-aluminium",     "label": "PVC & aluminium windows",       "group": "Building & property",    "source": { "kind": "local", "path": "templates/services" } },
+    { "id": "architecture",      "label": "Architecture & engineering",    "group": "Building & property",    "source": { "kind": "local", "path": "templates/services" } },
+    { "id": "interior-design",   "label": "Interior design",               "group": "Building & property",    "source": { "kind": "local", "path": "templates/services" } },
+    { "id": "real-estate",       "label": "Real estate agency",            "group": "Building & property",    "source": { "kind": "local", "path": "templates/services" } },
+    { "id": "solar-installer",   "label": "Solar installation",            "group": "Building & property",    "source": { "kind": "local", "path": "templates/services" } },
+
+    { "id": "fuel-station",      "label": "Fuel station",                  "group": "Vehicles & transport",   "source": { "kind": "local", "path": "templates/fuel" } },
+    { "id": "auto-repair",       "label": "Auto repair workshop",          "group": "Vehicles & transport",   "source": { "kind": "local", "path": "templates/services" } },
+    { "id": "car-wash",          "label": "Car wash",                      "group": "Vehicles & transport",   "source": { "kind": "local", "path": "templates/services" } },
+    { "id": "logistics",         "label": "Logistics & transport",         "group": "Vehicles & transport",   "source": { "kind": "local", "path": "templates/services" } },
+    { "id": "travel-agency",     "label": "Travel agency",                 "group": "Vehicles & transport",   "source": { "kind": "local", "path": "templates/services" } },
+
+    { "id": "cleaning",          "label": "Cleaning services",             "group": "Services",               "source": { "kind": "local", "path": "templates/services" } },
+    { "id": "laundry",           "label": "Laundry & dry cleaning",        "group": "Services",               "source": { "kind": "local", "path": "templates/services" } },
+    { "id": "law-firm",          "label": "Law firm",                      "group": "Services",               "source": { "kind": "local", "path": "templates/services" } },
+    { "id": "accounting",        "label": "Accounting firm",               "group": "Services",               "source": { "kind": "local", "path": "templates/services" } },
+    { "id": "it-services",       "label": "IT services & software",        "group": "Services",               "source": { "kind": "local", "path": "templates/services" } },
+    { "id": "photography",       "label": "Photography studio",            "group": "Services",               "source": { "kind": "local", "path": "templates/services" } },
+    { "id": "beauty-salon",      "label": "Beauty salon & barber",         "group": "Services",               "source": { "kind": "local", "path": "templates/health" } },
+    { "id": "gym",               "label": "Gym & fitness",                 "group": "Services",               "source": { "kind": "local", "path": "templates/services" } },
+    { "id": "event-hall",        "label": "Wedding & event hall",          "group": "Services",               "source": { "kind": "local", "path": "templates/food" } },
+
+    { "id": "school",            "label": "School",                        "group": "Education & community",  "source": { "kind": "local", "path": "templates/services" } },
+    { "id": "training-center",   "label": "Training centre & courses",     "group": "Education & community",  "source": { "kind": "local", "path": "templates/services" } },
+    { "id": "ngo",               "label": "NGO",                           "group": "Education & community",  "source": { "kind": "local", "path": "templates/services" } },
+
+    { "id": "other",             "label": "Something else",                "group": "Other",                  "source": { "kind": "local", "path": "templates/services" } }
+  ],
+  "examples_not_loaded": [
+    { "id": "tailor", "label": "Tailor", "group": "Shops & trade",
+      "source": { "kind": "git", "repo": "https://github.com/your-org/tailor-template.git", "ref": "v1.2.0", "subdir": "dist" } },
+    { "id": "pharmacy", "label": "Pharmacy", "group": "Health",
+      "source": { "kind": "git", "repo": "https://github.com/your-org/pharmacy-template.git", "ref": "3f9c2a1d8e7b6c5a4f3e2d1c0b9a8f7e6d5c4b3a" } }
+  ]
+}

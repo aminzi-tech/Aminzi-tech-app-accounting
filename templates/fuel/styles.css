@@ -1,0 +1,48 @@
+/* Tokens carried over from the Petrolia design in the AminZi asset kit. */
+@font-face { font-family: 'Instrument Serif'; src: url('fonts/instrument-serif.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'IBM Plex Sans'; src: url('fonts/plex-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'IBM Plex Sans'; src: url('fonts/plex-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+
+:root {
+  --bg: #12100e;
+  --surface: #1c1917;
+  --surface-alt: #26221f;
+  --border: #3a3430;
+  --text: #f2ede7;
+  --text-muted: #b8aea6;
+  --accent: #c96f3b;
+  --success: #5b8c5a;
+  --display: 'Instrument Serif', Georgia, serif;
+  --body: 'IBM Plex Sans', system-ui, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 400 1.0625rem/1.6 var(--body); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.top { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem clamp(1rem, 5vw, 4rem); border-bottom: 1px solid var(--border); }
+.brand { font: 400 1.5rem/1 var(--display); }
+.open { color: var(--success); font-weight: 600; }
+.open::before { content: ''; display: inline-block; width: .55rem; height: .55rem; border-radius: 50%; background: var(--success); margin-right: .5rem; vertical-align: .1em; }
+
+main { max-width: 76rem; margin: 0 auto; padding: 0 clamp(1rem, 5vw, 4rem); }
+.hero { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: clamp(2rem, 6vw, 5rem); align-items: end; padding: clamp(3rem, 9vw, 7rem) 0 clamp(2.5rem, 6vw, 4rem); }
+.kind { color: var(--text-muted); margin: 0 0 .5rem; }
+h1 { font: 400 clamp(3.25rem, 2rem + 6vw, 8rem)/0.92 var(--display); margin: 0 0 1.5rem; letter-spacing: -0.015em; overflow-wrap: anywhere; }
+.lede { color: var(--text-muted); max-width: 34rem; margin: 0; }
+h2 { font: 400 clamp(1.6rem, 1.2rem + 1.5vw, 2.4rem)/1.1 var(--display); margin: 0 0 1rem; }
+
+.board { background: var(--surface); border: 1px solid var(--border); padding: 1.5rem 1.75rem; border-radius: 6px; }
+.board table { width: 100%; border-collapse: collapse; }
+.board th, .board td { text-align: left; padding: .7rem 0; border-bottom: 1px solid var(--border); font-weight: 400; }
+.board thead th { color: var(--text-muted); font-size: .9rem; }
+.board td { text-align: right; font: 400 1.9rem/1 var(--display); color: var(--accent); font-variant-numeric: tabular-nums lining-nums; }
+.board thead th:last-child { text-align: right; }
+.updated { color: var(--text-muted); font-size: .9rem; margin: 1rem 0 0; }
+
+.services { border-top: 1px solid var(--border); padding: 2.5rem 0 4rem; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 1rem 3rem; }
+.services ul { list-style: none; margin: 0; padding: 0; columns: 2 16rem; column-gap: 2.5rem; }
+.services li { break-inside: avoid; padding: .6rem 0; color: var(--text-muted); }
+.services strong { color: var(--text); font-weight: 600; }
+.foot { text-align: center; color: var(--text-muted); padding: 0 1rem 2rem; font-size: .9rem; }
+
+@media (max-width: 820px) { .hero, .services { grid-template-columns: 1fr; } }

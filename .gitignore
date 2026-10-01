@@ -1,0 +1,10 @@
+node_modules/
+.env
+.env.*
+!.env.example
+data/
+instances/
+cache/
+*.db
+*.db-wal
+*.db-shm

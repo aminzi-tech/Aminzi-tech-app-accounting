@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{business_name}}</title>
+  <meta name="description" content="{{business_name}} — {{business_type}}. Services, past work and how to request a quote.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <span class="brand">{{business_name}}</span>
+    <a class="btn small" href="#quote">Request a quote</a>
+  </header>
+  <div class="band" aria-hidden="true"></div>
+
+  <main>
+    <section class="hero">
+      <h1>{{business_name}}</h1>
+      <p class="kind">{{business_type}}</p>
+      <p class="lede">State the work you do and the area you cover in one sentence — for example, “Residential and commercial construction across Kabul and Parwan, from foundations to finishing.”</p>
+    </section>
+
+    <section class="services" aria-labelledby="svc-h">
+      <h2 id="svc-h">What we do</h2>
+      <dl>
+        <div class="main"><dt>Your main service</dt><dd>The job most clients hire you for. Say what’s included and roughly how long it takes.</dd></div>
+        <div><dt>Second service</dt><dd>One or two sentences.</dd></div>
+        <div><dt>Third service</dt><dd>One or two sentences.</dd></div>
+        <div><dt>Maintenance or support</dt><dd>What happens after the job is done.</dd></div>
+      </dl>
+    </section>
+
+    <section class="process" aria-labelledby="proc-h">
+      <h2 id="proc-h">How a job runs</h2>
+      <ol>
+        <li><strong>Site visit</strong><span>We look at the work and take measurements.</span></li>
+        <li><strong>Written quote</strong><span>Materials, labour and timeline, itemised.</span></li>
+        <li><strong>Work</strong><span>A named supervisor you can call directly.</span></li>
+        <li><strong>Handover</strong><span>Walk-through, snag list, and warranty terms.</span></li>
+      </ol>
+    </section>
+
+    <section id="quote" class="quote" aria-labelledby="quote-h">
+      <h2 id="quote-h">Request a quote</h2>
+      <p>Add the phone number, email or office address clients should use. A quote form can be connected here later.</p>
+    </section>
+  </main>
+  <footer class="foot">© {{year}} {{business_name}}</footer>
+</body>
+</html>

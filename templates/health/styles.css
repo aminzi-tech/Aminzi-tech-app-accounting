@@ -1,0 +1,60 @@
+@font-face { font-family: 'Instrument Serif'; src: url('fonts/instrument-serif.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Instrument Sans'; src: url('fonts/instrument-sans.woff2') format('woff2'); font-weight: 400 700; font-display: swap; }
+
+:root {
+  --sage: #dfe6e1;
+  --paper: #fbfcfb;
+  --pine: #0f4f3d;
+  --pine-ink: #e6f2ec;
+  --apricot: #ec8a45;
+  --ink: #1d2b26;
+  --muted: #56665f;
+  --display: 'Instrument Serif', Georgia, serif;
+  --body: 'Instrument Sans', system-ui, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); font: 400 1.0625rem/1.6 var(--body);
+  background:
+    radial-gradient(40rem 40rem at -10% -10%, #f6e3cf 0, transparent 60%),
+    radial-gradient(30rem 30rem at 110% 20%, #cfdcd5 0, transparent 60%),
+    var(--sage);
+  min-height: 100vh;
+}
+:focus-visible { outline: 3px solid var(--apricot); outline-offset: 3px; }
+
+.board {
+  display: grid; gap: 1rem; padding: clamp(1rem, 4vw, 3rem); max-width: 76rem; margin: 0 auto;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-areas:
+    "intro intro intro intro intro intro intro hours hours hours hours hours"
+    "intro intro intro intro intro intro intro call  call  call  call  call"
+    "svc   svc   svc   svc   svc   book  book  book  book  book  book  book";
+}
+.panel { border-radius: 2rem; padding: clamp(1.5rem, 3vw, 2.5rem); background: var(--paper); box-shadow: 0 1px 0 rgba(255,255,255,.8) inset, 0 20px 40px -24px rgba(15, 79, 61, .35); }
+.intro { grid-area: intro; border-radius: 2rem 6rem 2rem 2rem; }
+.hours { grid-area: hours; background: var(--pine); color: var(--pine-ink); }
+.call  { grid-area: call; background: var(--apricot); color: #2a1406; border-radius: 2rem 2rem 6rem 2rem; }
+.services { grid-area: svc; }
+.book { grid-area: book; background: rgba(251, 252, 251, .6); backdrop-filter: blur(12px); }
+
+.kind { color: var(--muted); margin: 0 0 .5rem; }
+h1 { font: 400 clamp(2.75rem, 1.8rem + 4.5vw, 5.5rem)/1 var(--display); margin: 0 0 1.25rem; letter-spacing: -0.01em; overflow-wrap: anywhere; }
+h2 { font: 400 clamp(1.6rem, 1.2rem + 1.4vw, 2.25rem)/1.1 var(--display); margin: 0 0 .75rem; }
+.intro p:not(.kind) { color: var(--muted); max-width: 36rem; }
+.btn { display: inline-block; margin-top: 1rem; background: var(--ink); color: var(--paper); text-decoration: none; padding: .9rem 1.6rem; border-radius: 999px; font-weight: 600; }
+.btn:hover { background: var(--pine); }
+.big { font: 400 clamp(2.25rem, 1.6rem + 2.5vw, 3.5rem)/1 var(--display); margin: .25rem 0 1.25rem; font-variant-numeric: lining-nums; }
+dl { margin: 0; }
+dl div { display: flex; justify-content: space-between; padding: .4rem 0; border-top: 1px solid rgba(230, 242, 236, .2); }
+dd { margin: 0; font-variant-numeric: tabular-nums; }
+.hint { color: var(--muted); font-size: .95rem; margin-top: 0; }
+.services ul { list-style: none; padding: 0; margin: 1rem 0 0; }
+.services li { display: grid; gap: .1rem; padding: .85rem 0; border-top: 1px solid #e3e9e5; }
+.services li span { color: var(--muted); font-size: .95rem; }
+.foot { text-align: center; color: var(--muted); padding: 1rem 1rem 2.5rem; font-size: .9rem; }
+
+@media (max-width: 860px) {
+  .board { grid-template-columns: 1fr; grid-template-areas: "intro" "hours" "call" "svc" "book"; }
+  .intro, .call { border-radius: 2rem; }
+}

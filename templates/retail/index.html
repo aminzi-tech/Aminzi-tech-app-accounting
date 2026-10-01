@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{business_name}}</title>
+  <meta name="description" content="{{business_name}} — {{business_type}}. What we stock, prices and where to find the shop.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="sign">
+    <div class="sign-inner">
+      <h1>{{business_name}}</h1>
+      <p>{{business_type}}</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="strip" aria-label="Shop basics">
+      <p><strong>Open</strong> Sat – Thu, 8:00 – 19:00</p>
+      <p><strong>Where</strong> Add your market or street name</p>
+      <p><strong>Orders</strong> Add a phone or WhatsApp number</p>
+    </section>
+
+    <section class="stock" aria-labelledby="stock-h">
+      <div class="stock-head">
+        <h2 id="stock-h">In the shop this week</h2>
+        <p>Sample products with sample prices. Swap in photos and real prices — the big tile is for the item you most want people to see.</p>
+      </div>
+      <ul class="shelf">
+        <li class="item feature">
+          <div class="swatch s1" aria-hidden="true"></div>
+          <h3>Featured item</h3>
+          <p>Describe it in one line: size, material, what it fits.</p>
+          <span class="tag">2,400 AFN</span>
+        </li>
+        <li class="item"><div class="swatch s2" aria-hidden="true"></div><h3>Second item</h3><p>One-line detail.</p><span class="tag">850 AFN</span></li>
+        <li class="item"><div class="swatch s3" aria-hidden="true"></div><h3>Third item</h3><p>One-line detail.</p><span class="tag">1,100 AFN</span></li>
+        <li class="item tall"><div class="swatch s4" aria-hidden="true"></div><h3>Repair or service</h3><p>If you also fix, alter or install, list it here with a typical turnaround.</p><span class="tag">from 300 AFN</span></li>
+        <li class="item"><div class="swatch s5" aria-hidden="true"></div><h3>Fourth item</h3><p>One-line detail.</p><span class="tag">450 AFN</span></li>
+      </ul>
+    </section>
+
+    <section class="how" aria-labelledby="how-h">
+      <h2 id="how-h">Ordering by phone</h2>
+      <ol>
+        <li>Send a photo or the name of what you need.</li>
+        <li>We confirm the price and whether it’s in stock.</li>
+        <li>Pick it up, or we deliver within the city.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="foot">© {{year}} {{business_name}}</footer>
+</body>
+</html>

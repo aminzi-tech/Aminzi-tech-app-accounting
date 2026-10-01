@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AminZi Workspace — sign in</title>
+  <meta name="description" content="Sign in or create the workspace for your business.">
+  <meta name="theme-color" content="#0e2a47">
+  <link rel="preload" href="/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/app.css">
+  <script type="module" src="/assets/js/auth.js"></script>
+</head>
+<body>
+<div class="auth">
+  <aside class="harbour" aria-label="Your workspace preview">
+    <a class="wordmark" href="/">
+      <svg viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" fill="#1db5a7"/><path d="M8 21 14 7l6 14M10.6 15.5h6.8" fill="none" stroke="#0e2a47" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      AminZi Workspace
+    </a>
+
+    <div class="signboard" aria-live="polite">
+      <p class="caption" id="board-caption">Your business, ready the moment you sign up.</p>
+      <p class="name placeholder" id="board-name">Your business name</p>
+      <p class="type" id="board-type"></p>
+      <p class="address" id="board-address" hidden>Workspace copied from <strong id="board-template"></strong></p>
+    </div>
+
+    <svg class="waves" viewBox="0 0 800 420" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path d="M0 140C120 60 220 210 360 150S600 30 800 110V420H0z" fill="#143a63"/>
+      <path d="M0 230C150 160 260 300 420 240S640 140 800 210V420H0z" fill="#1d4f86"/>
+      <path d="M0 320C170 270 300 380 470 330S690 270 800 310V420H0z" fill="#2563a6"/>
+      <g fill="#cfe1f7" opacity=".5"><circle cx="120" cy="96" r="2.5"/><circle cx="300" cy="120" r="2"/><circle cx="520" cy="70" r="2.5"/><circle cx="660" cy="150" r="2"/><circle cx="420" cy="196" r="1.8"/></g>
+    </svg>
+  </aside>
+
+  <main class="panel">
+    <div class="panel-inner">
+      <nav class="switch" aria-label="Choose">
+        <a href="#login" id="to-login" aria-current="page">Sign in</a>
+        <a href="#signup" id="to-signup">Create account</a>
+      </nav>
+
+      <div id="flash" class="alert" role="alert" hidden></div>
+
+      <!-- ================= SIGN IN ================= -->
+      <section id="view-login" aria-labelledby="login-title">
+        <h1 class="title" id="login-title">Sign in</h1>
+        <p class="sub">Open your business workspace.</p>
+
+        <a class="btn-google" id="google-login" href="/auth/google/start">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.6 5.4 2.7 13.3l7.9 6.1C12.5 13.6 17.8 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.7 6c4.5-4.2 6.9-10.3 6.9-17.7z"/><path fill="#FBBC05" d="M10.5 28.6c-.5-1.4-.8-3-.8-4.6s.3-3.2.8-4.6l-7.9-6.1C1 16.6 0 20.2 0 24s1 7.4 2.7 10.7l7.8-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.7-6c-2.2 1.5-5 2.3-8.2 2.3-6.2 0-11.5-4.2-13.4-9.9l-7.9 6.1C6.6 42.6 14.6 48 24 48z"/></svg>
+          Continue with Google
+        </a>
+        <p class="google-note" data-google-off hidden>Google sign-in isn’t set up on this server yet.</p>
+
+        <div class="or">or</div>
+
+        <div class="switch" role="tablist" aria-label="Sign in with">
+          <button type="button" role="tab" id="tab-email" aria-controls="login-email" aria-selected="true">Email</button>
+          <button type="button" role="tab" id="tab-phone" aria-controls="login-phone" aria-selected="false" tabindex="-1">Phone</button>
+        </div>
+
+        <form id="login-email" role="tabpanel" aria-labelledby="tab-email" novalidate>
+          <div class="field">
+            <label for="le-email">Email</label>
+            <input id="le-email" name="email" type="email" autocomplete="username" inputmode="email" required>
+            <p class="error" id="le-email-err"></p>
+          </div>
+          <div class="field">
+            <label for="le-password">Password</label>
+            <div class="pw">
+              <input id="le-password" name="password" type="password" autocomplete="current-password" required>
+              <button type="button" data-toggle-pw="le-password" aria-pressed="false">Show</button>
+            </div>
+            <p class="error" id="le-password-err"></p>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+        </form>
+
+        <form id="login-phone" role="tabpanel" aria-labelledby="tab-phone" novalidate hidden>
+          <div class="field" id="lp-phone-field">
+            <label for="lp-phone">Phone number</label>
+            <input id="lp-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+93 70 123 4567" required>
+            <p class="hint">We’ll text you a 6-digit code.</p>
+            <p class="error" id="lp-phone-err"></p>
+          </div>
+          <div class="field" id="lp-code-field" hidden>
+            <label for="lp-code">Code from the text message</label>
+            <input id="lp-code" class="code-input" name="code" type="text" autocomplete="one-time-code" inputmode="numeric" pattern="\d{6}" maxlength="6">
+            <p class="hint" id="lp-sent"></p>
+            <p class="error" id="lp-code-err"></p>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit" id="lp-submit">Text me a code</button>
+          <p class="after" id="lp-after" hidden>
+            <button type="button" class="linklike" id="lp-resend">Send a new code</button>
+            <button type="button" class="linklike" id="lp-change">Use a different number</button>
+          </p>
+        </form>
+      </section>
+
+      <!-- ================= SIGN UP ================= -->
+      <section id="view-signup" aria-labelledby="signup-title" hidden>
+        <h1 class="title" id="signup-title">Create your workspace</h1>
+        <p class="sub">Tell us about the business. We set up a workspace built for your type of business as soon as you confirm.</p>
+
+        <a class="btn-google" id="google-signup" href="/auth/google/start">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.6 5.4 2.7 13.3l7.9 6.1C12.5 13.6 17.8 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.7 6c4.5-4.2 6.9-10.3 6.9-17.7z"/><path fill="#FBBC05" d="M10.5 28.6c-.5-1.4-.8-3-.8-4.6s.3-3.2.8-4.6l-7.9-6.1C1 16.6 0 20.2 0 24s1 7.4 2.7 10.7l7.8-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.7-6c-2.2 1.5-5 2.3-8.2 2.3-6.2 0-11.5-4.2-13.4-9.9l-7.9 6.1C6.6 42.6 14.6 48 24 48z"/></svg>
+          Sign up with Google
+        </a>
+        <p class="google-note" data-google-off hidden>Google sign-up isn’t set up on this server yet.</p>
+
+        <div class="or">or fill in the details</div>
+
+        <form id="signup-form" novalidate>
+          <div class="field">
+            <label for="su-name">Business name</label>
+            <input id="su-name" name="businessName" type="text" autocomplete="organization" maxlength="80" required>
+            <p class="error" id="su-businessName-err"></p>
+          </div>
+          <div class="field">
+            <label for="su-type">Business type</label>
+            <select id="su-type" name="businessType" required>
+              <option value="">Choose the closest match</option>
+            </select>
+            <p class="error" id="su-businessType-err"></p>
+          </div>
+          <div class="row-2">
+            <div class="field">
+              <label for="su-email">Email</label>
+              <input id="su-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+              <p class="error" id="su-email-err"></p>
+            </div>
+            <div class="field">
+              <label for="su-phone">Phone number</label>
+              <input id="su-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+93 70 123 4567" required>
+              <p class="error" id="su-phone-err"></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="su-password">Password</label>
+            <div class="pw">
+              <input id="su-password" name="password" type="password" autocomplete="new-password" minlength="10" maxlength="128" required aria-describedby="su-password-hint">
+              <button type="button" data-toggle-pw="su-password" aria-pressed="false">Show</button>
+            </div>
+            <p class="hint" id="su-password-hint">At least 10 characters. A short sentence is easier to remember than symbols.</p>
+            <p class="error" id="su-password-err"></p>
+          </div>
+          <fieldset class="field">
+            <legend>Send my confirmation code by</legend>
+            <div class="choice">
+              <label><input type="radio" name="verifyBy" value="email" checked> Email</label>
+              <label><input type="radio" name="verifyBy" value="phone"> Text message</label>
+            </div>
+          </fieldset>
+          <button class="btn btn-primary btn-block" type="submit">Create account</button>
+        </form>
+
+        <form id="verify-form" novalidate hidden>
+          <div class="field">
+            <label for="vf-code">Enter the 6-digit code</label>
+            <input id="vf-code" class="code-input" name="code" type="text" autocomplete="one-time-code" inputmode="numeric" pattern="\d{6}" maxlength="6" required>
+            <p class="hint" id="vf-sent"></p>
+            <p class="error" id="vf-code-err"></p>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">Confirm and open my workspace</button>
+          <p class="after">
+            <button type="button" class="linklike" id="vf-resend">Send a new code</button>
+            <button type="button" class="linklike" id="vf-back">Edit my details</button>
+          </p>
+        </form>
+      </section>
+    </div>
+  </main>
+</div>
+</body>
+</html>

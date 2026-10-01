@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AminZi Workspace — finish sign up</title>
+  <meta name="theme-color" content="#0e2a47">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/app.css">
+  <script type="module" src="/assets/js/complete.js"></script>
+</head>
+<body>
+<div class="auth">
+  <aside class="harbour" aria-label="Your workspace preview">
+    <a class="wordmark" href="/">
+      <svg viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" fill="#1db5a7"/><path d="M8 21 14 7l6 14M10.6 15.5h6.8" fill="none" stroke="#0e2a47" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      AminZi Workspace
+    </a>
+    <div class="signboard" aria-live="polite">
+      <p class="caption">Your workspace will open with this name.</p>
+      <p class="name placeholder" id="board-name">Your business name</p>
+      <p class="type" id="board-type"></p>
+    </div>
+    <svg class="waves" viewBox="0 0 800 420" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path d="M0 140C120 60 220 210 360 150S600 30 800 110V420H0z" fill="#143a63"/>
+      <path d="M0 230C150 160 260 300 420 240S640 140 800 210V420H0z" fill="#1d4f86"/>
+      <path d="M0 320C170 270 300 380 470 330S690 270 800 310V420H0z" fill="#2563a6"/>
+    </svg>
+  </aside>
+
+  <main class="panel">
+    <div class="panel-inner">
+      <div id="flash" class="alert" role="alert" hidden></div>
+      <h1 class="title">One more step</h1>
+      <p class="sub" id="cp-who">Signed in with Google.</p>
+
+      <form id="cp-form" novalidate>
+        <div class="field">
+          <label for="cp-name">Business name</label>
+          <input id="cp-name" name="businessName" type="text" autocomplete="organization" maxlength="80" required>
+          <p class="error" id="cp-businessName-err"></p>
+        </div>
+        <div class="field">
+          <label for="cp-type">Business type</label>
+          <select id="cp-type" name="businessType" required>
+            <option value="">Choose the closest match</option>
+          </select>
+          <p class="error" id="cp-businessType-err"></p>
+        </div>
+        <div class="field">
+          <label for="cp-phone">Phone number</label>
+          <input id="cp-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+93 70 123 4567" required>
+          <p class="hint">You can confirm it from your dashboard and use it to sign in by text message.</p>
+          <p class="error" id="cp-phone-err"></p>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Create my workspace</button>
+      </form>
+      <p class="after"><a href="/">Cancel and go back</a></p>
+    </div>
+  </main>
+</div>
+</body>
+</html>

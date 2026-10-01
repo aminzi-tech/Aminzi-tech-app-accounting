@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AminZi Workspace</title>
+  <meta name="theme-color" content="#0e2a47">
+  <link rel="preload" href="/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/app.css">
+  <script type="module" src="/assets/js/dashboard.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="/dashboard">
+      <svg viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" fill="#1db5a7"/><path d="M8 21 14 7l6 14M10.6 15.5h6.8" fill="none" stroke="#0e2a47" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      AminZi Workspace
+    </a>
+    <div>
+      <span class="who" id="who"></span>
+      <button class="btn btn-out" type="button" id="logout">Sign out</button>
+    </div>
+  </header>
+
+  <main class="dash">
+    <div id="flash" class="alert" role="alert" hidden></div>
+    <div class="dash-head">
+      <h1 id="biz-name">&nbsp;</h1>
+      <p id="biz-type">&nbsp;</p>
+    </div>
+
+    <section class="workspace" aria-labelledby="ws-title">
+      <div class="ws-bar">
+        <div>
+          <h2 id="ws-title">Your workspace</h2>
+          <p class="path" id="ws-path"></p>
+        </div>
+        <a class="btn btn-primary" id="ws-open" href="#" hidden>Open workspace</a>
+        <button class="btn btn-quiet" type="button" id="ws-retry" hidden>Try again</button>
+      </div>
+      <div class="ws-frame">
+        <iframe id="ws-iframe" title="Preview of your workspace" tabindex="-1" sandbox="allow-same-origin" hidden></iframe>
+        <div class="ws-state" id="ws-state" aria-live="polite">
+          <div class="spinner" aria-hidden="true"></div>
+          <strong>Setting up your workspace</strong>
+          <span>Copying the template for your business type. This usually takes a few seconds.</span>
+        </div>
+      </div>
+    </section>
+
+    <aside class="account" aria-labelledby="acct-title">
+      <h2 id="acct-title">Account</h2>
+      <dl class="facts">
+        <div><dt>Email</dt><dd id="acct-email"></dd></div>
+        <div><dt>Phone</dt><dd id="acct-phone"></dd></div>
+        <div><dt>Google</dt><dd id="acct-google"></dd></div>
+        <div><dt>Signed-in devices</dt><dd id="acct-sessions"></dd></div>
+      </dl>
+      <div class="danger-zone">
+        <button class="btn btn-danger" type="button" id="logout-all">Sign out everywhere</button>
+        <p>Ends every session on every device, including this one.</p>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

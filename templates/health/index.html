@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{business_name}}</title>
+  <meta name="description" content="{{business_name}} — {{business_type}}. Services, hours and appointments.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="board">
+    <section class="panel intro">
+      <p class="kind">{{business_type}}</p>
+      <h1>{{business_name}}</h1>
+      <p>Say plainly who you treat and what a first visit looks like. For example: “General check-ups, children’s vaccinations and blood tests. Walk in before 11:00 or book a time.”</p>
+      <a class="btn" href="#book">Book an appointment</a>
+    </section>
+
+    <section class="panel hours" aria-labelledby="hours-h">
+      <h2 id="hours-h">Open today</h2>
+      <p class="big">8:00 – 17:00</p>
+      <dl>
+        <div><dt>Sat – Wed</dt><dd>8:00 – 17:00</dd></div>
+        <div><dt>Thursday</dt><dd>8:00 – 13:00</dd></div>
+        <div><dt>Friday</dt><dd>Closed</dd></div>
+      </dl>
+    </section>
+
+    <section class="panel call" aria-labelledby="call-h">
+      <h2 id="call-h">Urgent?</h2>
+      <p>Put the number patients should call after hours here, and the nearest emergency hospital.</p>
+    </section>
+
+    <section class="panel services" aria-labelledby="services-h">
+      <h2 id="services-h">Services</h2>
+      <p class="hint">Sample list — edit to match what you offer.</p>
+      <ul>
+        <li><strong>General consultation</strong><span>Adults and children, 20 minutes</span></li>
+        <li><strong>Vaccinations</strong><span>Routine schedule and travel vaccines</span></li>
+        <li><strong>Laboratory tests</strong><span>Results the same day for most tests</span></li>
+        <li><strong>Follow-up visits</strong><span>Bring your previous prescription</span></li>
+      </ul>
+    </section>
+
+    <section id="book" class="panel book" aria-labelledby="book-h">
+      <h2 id="book-h">Book a visit</h2>
+      <p>Appointment booking connects here. Until then, list how patients can reach you: phone, WhatsApp, or walk-in times.</p>
+    </section>
+  </main>
+  <footer class="foot">© {{year}} {{business_name}}</footer>
+</body>
+</html>

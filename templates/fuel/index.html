@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{business_name}}</title>
+  <meta name="description" content="{{business_name}} — {{business_type}}. Today's fuel prices, services and opening hours.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <span class="brand">{{business_name}}</span>
+    <span class="open">Open 24 hours</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="kind">{{business_type}}</p>
+        <h1>{{business_name}}</h1>
+        <p class="lede">Name the road you’re on and what drivers can count on — “On the Kabul–Jalalabad road, 2 km past the bridge. Diesel, petrol, air and a clean washroom.”</p>
+      </div>
+      <section class="board" aria-labelledby="price-h">
+        <h2 id="price-h">Today’s prices</h2>
+        <table>
+          <thead><tr><th scope="col">Fuel</th><th scope="col">AFN / litre</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Petrol</th><td>78.50</td></tr>
+            <tr><th scope="row">Diesel</th><td>74.00</td></tr>
+            <tr><th scope="row">LPG</th><td>62.00</td></tr>
+          </tbody>
+        </table>
+        <p class="updated">Sample prices. Update them daily in <code>index.html</code>.</p>
+      </section>
+    </section>
+
+    <section class="services" aria-labelledby="svc-h">
+      <h2 id="svc-h">At the station</h2>
+      <ul>
+        <li><strong>Oil change</strong> while you wait, about 20 minutes</li>
+        <li><strong>Tyre air and repair</strong></li>
+        <li><strong>Shop</strong> with water, snacks and car essentials</li>
+        <li><strong>Fleet accounts</strong> for transport companies — monthly billing</li>
+      </ul>
+    </section>
+  </main>
+  <footer class="foot">© {{year}} {{business_name}}</footer>
+</body>
+</html>
